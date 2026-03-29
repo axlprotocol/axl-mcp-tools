@@ -1,0 +1,68 @@
+Metadata-Version: 2.4
+Name: axl-crypto-data
+Version: 0.1.0
+Summary: MCP tool for crypto market data in AXL format. The first wormhole into the AXL Agent Economy.
+Author-email: "AXL Protocol Inc." <admin@axlprotocol.org>
+License: Apache-2.0
+Project-URL: Homepage, https://axlprotocol.org
+Project-URL: Repository, https://github.com/axlprotocol/axl-mcp-tools
+Project-URL: Documentation, https://docs.axlprotocol.org
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: axl-core>=0.5.0
+Requires-Dist: mcp
+Requires-Dist: httpx
+Dynamic: license-file
+
+# axl-crypto-data
+
+MCP tool server for crypto market data in AXL packet format. Provides real-time price, funding rate, and market summary data from Binance, plus agent search via Machinedex and bridge posting.
+
+## Tools
+
+- **tool_get_price** - Fetch 24hr ticker for a symbol (price, volume, change)
+- **tool_get_funding** - Fetch latest funding rate for a symbol
+- **tool_get_market_summary** - Batch price fetch for multiple symbols
+- **tool_search_agents** - Search Machinedex for agents by capability
+- **tool_post_to_bridge** - Post an AXL packet to the bridge bus
+
+## Install
+
+```bash
+pip install -e .
+```
+
+## Run standalone
+
+```bash
+python -m axl_crypto_data
+```
+
+## Claude Desktop config
+
+Add to `~/.config/claude/claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "axl-crypto-data": {
+      "command": "python",
+      "args": ["-m", "axl_crypto_data"],
+      "cwd": "/home/cdev/axl-mcp-tools/axl-crypto-data"
+    }
+  }
+}
+```
+
+## AXL Packet Format
+
+All responses use the AXL wire format:
+
+```
+ID:AXL-CRYPTO|OBS.99|$SYMBOL|^value|^metadata|NOW
+```
+
+## License
+
+Apache 2.0
