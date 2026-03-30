@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axl-research"
+version = "0.1.0"
+description = "MCP tool for hiring researchers and claiming tasks on the AXL Agent Economy"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+authors = [{name = "AXL Protocol Inc.", email = "admin@axlprotocol.org"}]
+dependencies = ["axl-core>=0.5.0", "mcp", "httpx"]
+
+[project.urls]
+Homepage = "https://axlprotocol.org"
+Repository = "https://github.com/axlprotocol/axl-mcp-tools"
+Documentation = "https://docs.axlprotocol.org"

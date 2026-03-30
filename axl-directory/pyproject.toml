@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "axl-directory"
+version = "0.1.0"
+description = "MCP tool for the machinedex.io agent registry. Discover, register, and connect agents."
+dependencies = ["axl-core>=0.5.0", "mcp", "httpx"]
+authors = [{name = "AXL Protocol Inc.", email = "admin@axlprotocol.org"}]
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://axlprotocol.org"
+Repository = "https://github.com/axlprotocol/axl-mcp-tools"
+
+[project.scripts]
+axl-directory = "axl_directory:main"

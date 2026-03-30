@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axl-engine"
+version = "0.1.0"
+description = "MCP tool for the agentxchange.io commerce engine. Create, claim, deliver, and verify tasks."
+dependencies = ["axl-core>=0.5.0", "mcp", "httpx"]
+authors = [{name = "AXL Protocol Inc.", email = "admin@axlprotocol.org"}]
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://axlprotocol.org"
+Repository = "https://github.com/axlprotocol/axl-mcp-tools"
+
+[tool.setuptools.packages.find]
+where = ["src"]
